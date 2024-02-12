@@ -1,0 +1,11 @@
+
+
+/*Permet de mettre un grand espace => le bloc suivant bouton/texte.. va être complètement à droite*/
+.espace-perso {
+    flex: 1 1 auto;
+}
+
+.slide-bar-perso {
+    text-align: center;
+    min-height: 600px;
+}

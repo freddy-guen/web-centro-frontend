@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "id": "9eab",
+      "firstName": "User",
+      "lastName": "Guen",
+      "email": "user@yahoo.fr",
+      "password": "stdcensus",
+      "status": true,
+      "role": "USER"
+    },
+    {
+      "id": "1",
+      "firstName": "Admin",
+      "lastName": "Guen",
+      "email": "admin@yahoo.fr",
+      "password": "stdcensus",
+      "status": true,
+      "role": "ADMIN"
+    },
+    {
+      "id": "7e9e",
+      "firstName": "Root",
+      "lastName": "Guen",
+      "email": "root@yahoo.fr",
+      "password": "stdcensus",
+      "status": true,
+      "role": "ROOT"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+
+<div *ngIf="isMenuVisible">
+    <mat-toolbar color="primary" class="mat-elevation-z8">
+        
+        <span>Le Centro</span>
+
+        <span class="espace-perso"></span>
+
+        <button mat-button routerLink="/connexion" *ngIf="!isUser">Se connecter</button>
+        <button mat-button [matMenuTriggerFor]="belowMenu" *ngIf="isUser"><mat-icon>person</mat-icon></button>
+        <mat-menu #belowMenu="matMenu" yPosition="below">
+            <button mat-menu-item>Paramètres</button>
+            <button mat-menu-item routerLink="/connexion">Se déconnecter</button>
+        </mat-menu>
+    </mat-toolbar>    
+</div>
+
+<router-outlet *ngIf="!isAdminOrRoot"></router-outlet>
+
+
+<!-- Admin/Root menu -->
+
+<div *ngIf="isAdminOrRoot">
+    <mat-toolbar color="accent" class="mat-elevation-z8">
+        <button mat-icon-button (click)="drawer.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>Page d'administration Le Centro</span>
+
+        <span class="espace-perso"></span>
+
+        <button mat-button routerLink="/connexion">Se déconnecter</button>
+    </mat-toolbar>
+
+    <mat-drawer-container autosize>
+        <mat-drawer #drawer opened="true" position="start" mode="side">
+            <mat-nav-list>
+                <mat-list-item>
+                    <button mat-button routerLink="/administration"><mat-icon>home</mat-icon>Accueil</button>
+                </mat-list-item>
+
+                <mat-list-item>
+                    <button mat-button routerLink="/administration/annonces"><mat-icon>folder</mat-icon>Gestion des annonces</button>
+                </mat-list-item>
+
+                <mat-list-item>
+                    <button mat-button routerLink="/administration/utilisateurs"><mat-icon>co_present</mat-icon>Gestion des utilisateurs</button>
+                </mat-list-item>
+
+                <mat-list-item>
+                    <button mat-button routerLink="/administration"><mat-icon>verified_user</mat-icon>Autres</button>
+                </mat-list-item>
+            </mat-nav-list>
+        </mat-drawer>
+        <mat-drawer-content>
+            <div class="slide-bar-perso">
+                <router-outlet></router-outlet>
+            </div>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>
+
+
+
